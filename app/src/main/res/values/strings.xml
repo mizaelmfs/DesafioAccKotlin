@@ -3,4 +3,17 @@
     <string name="title_dialog_internet_error">Houve um error ao tentar \nconectar-se com a Internet</string>
     <string name="body_dialog_internet_error_retry">Tente novamente</string>
     <string name="finish">Sair</string>
+    <string name="menu">Menu</string>
+    <string name="details">Detalhes</string>
+    <string name="cart">Carrinho</string>
+    <string name="product">Produto</string>
+    <string name="quantity">Quantidade</string>
+    <string name="add">Adicionais</string>
+    <string name="not_cart">Você não possui nenhum produto \ndentro do seu carrinho.</string>
+    <string name="add_to_cart">Colocar no carrinho</string>
+    <string name="size">Tamanho</string>
+    <string name="sugar">Açucar</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

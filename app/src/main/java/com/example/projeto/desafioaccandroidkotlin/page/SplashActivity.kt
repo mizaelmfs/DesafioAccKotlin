@@ -1,4 +1,4 @@
-package com.example.projeto.desafioaccandroidkotlin
+package com.example.projeto.desafioaccandroidkotlin.page
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
+import com.example.projeto.desafioaccandroidkotlin.R
 import com.example.projeto.desafioaccandroidkotlin.Utils.NetworkChange
 
 class SplashActivity : AppCompatActivity() {
