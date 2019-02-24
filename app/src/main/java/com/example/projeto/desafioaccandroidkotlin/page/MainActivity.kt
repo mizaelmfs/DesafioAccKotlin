@@ -8,7 +8,7 @@ import com.example.projeto.desafioaccandroidkotlin.databinding.ActivityMainBindi
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import com.example.projeto.desafioaccandroidkotlin.Utils.PageAnimation
-import com.example.projeto.desafioaccandroidkotlin.page.fragment.MenuFragment
+import com.example.projeto.desafioaccandroidkotlin.page.fragment.menu.MenuFragment
 
 class MainActivity : AppCompatActivity() {
 

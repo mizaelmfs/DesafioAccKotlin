@@ -11,7 +11,7 @@ import com.example.projeto.desafioaccandroidkotlin.Utils.NetworkChange
 
 class SplashActivity : AppCompatActivity() {
 
-    private lateinit var connectionDetector: NetworkChange
+    private lateinit var networkChange: NetworkChange
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,14 +23,14 @@ class SplashActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        connectionDetector =
+        networkChange =
             NetworkChange(context = baseContext)
 
         goToMainActivity()
     }
 
     private fun goToMainActivity() {
-            if (connectionDetector.hasInternetConnection()) {
+            if (networkChange.hasInternetConnection()) {
                 Handler().postDelayed({
                     val intent = Intent(this, MainActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)

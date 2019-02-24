@@ -2,11 +2,19 @@
 <layout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+                name="viewmodel"
+                type="com.example.projeto.desafioaccandroidkotlin.page.fragment.menu.model.MenuViewModel"/>
+    </data>
+
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            tools:context=".page.fragment.MenuFragment">
+            tools:context=".page.fragment.menu.MenuFragment">
 
         <include android:id="@+id/toolbar"
                 layout="@layout/toolbar" />
@@ -14,8 +22,31 @@
         <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_menu"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:visibility="@{viewmodel.loading ? View.GONE : View.VISIBLE, default=gone}">
 
         </android.support.v7.widget.RecyclerView>
+
+        <RelativeLayout
+                android:id="@+id/twoFactorLoading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="@{viewmodel.loading ? View.VISIBLE : View.GONE, default=gone}">
+
+            <ProgressBar
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:indeterminate="true"
+                    android:maxHeight="22dip"
+                    android:minHeight="18dip"
+                    android:theme="@style/LinearProgress" />
+        </RelativeLayout>
     </LinearLayout>
 </layout>

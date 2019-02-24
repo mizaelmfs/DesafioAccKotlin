@@ -1,4 +1,4 @@
-package com.example.projeto.desafioaccandroidkotlin.page.fragment
+package com.example.projeto.desafioaccandroidkotlin.page.fragment.cart
 
 
 import android.databinding.DataBindingUtil
@@ -13,6 +13,7 @@ import com.example.projeto.desafioaccandroidkotlin.R
 import com.example.projeto.desafioaccandroidkotlin.Utils.PageAnimation
 import com.example.projeto.desafioaccandroidkotlin.databinding.FragmentCartBinding
 import com.example.projeto.desafioaccandroidkotlin.page.BaseFragment
+import com.example.projeto.desafioaccandroidkotlin.page.fragment.menu.MenuFragment
 
 class CartFragment : BaseFragment() {
 
@@ -26,18 +27,17 @@ class CartFragment : BaseFragment() {
 
         menuFragment = MenuFragment()
 
-        configTop(activity!!.supportFragmentManager)
+        configTop()
 
         return cartBinding.root
     }
 
-
-    private fun configTop(fragmentManager: FragmentManager) {
+    private fun configTop() {
         cartBinding.toolbar!!.titleToolbarTv.text = getString(R.string.cart)
         cartBinding.toolbar!!.backIv.visibility = View.VISIBLE
         (activity as AppCompatActivity).setSupportActionBar(cartBinding.toolbar!!.myToolbar)
         cartBinding.toolbar!!.backIv.setOnClickListener {
-            changeFragment(menuFragment, PageAnimation.SLIDE_RIGHT_TO_LEFT, R.id.container_fragment, fragmentManager)
+            changeFragment(menuFragment, PageAnimation.SLIDE_RIGHT_TO_LEFT, R.id.container_fragment, activity!!.supportFragmentManager)
         }
     }
 

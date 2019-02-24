@@ -1,4 +1,4 @@
-package com.example.projeto.desafioaccandroidkotlin.page.fragment
+package com.example.projeto.desafioaccandroidkotlin.page.fragment.details
 
 
 import android.databinding.DataBindingUtil
@@ -13,6 +13,7 @@ import com.example.projeto.desafioaccandroidkotlin.R
 import com.example.projeto.desafioaccandroidkotlin.Utils.PageAnimation
 import com.example.projeto.desafioaccandroidkotlin.databinding.FragmentDetailsBinding
 import com.example.projeto.desafioaccandroidkotlin.page.BaseFragment
+import com.example.projeto.desafioaccandroidkotlin.page.fragment.menu.MenuFragment
 
 class DetailsFragment : BaseFragment() {
 
@@ -22,21 +23,21 @@ class DetailsFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        detailsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_menu, container, false)
+        detailsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
 
         menuFragment = MenuFragment()
 
-        configTop(activity!!.supportFragmentManager)
+        configTop()
 
         return detailsBinding.root
     }
 
-    private fun configTop(fragmentManager: FragmentManager) {
+    private fun configTop() {
         detailsBinding.toolbar!!.titleToolbarTv.text = getString(R.string.details)
         detailsBinding.toolbar!!.backIv.visibility = View.VISIBLE
         (activity as AppCompatActivity).setSupportActionBar(detailsBinding.toolbar!!.myToolbar)
         detailsBinding.toolbar!!.backIv.setOnClickListener {
-            changeFragment(menuFragment, PageAnimation.SLIDE_RIGHT_TO_LEFT, R.id.container_fragment, fragmentManager)
+            changeFragment(menuFragment, PageAnimation.SLIDE_RIGHT_TO_LEFT, R.id.container_fragment, activity!!.supportFragmentManager)
         }
     }
 
