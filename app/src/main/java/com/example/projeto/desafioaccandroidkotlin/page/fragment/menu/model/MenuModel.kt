@@ -1,5 +1,7 @@
 package com.example.projeto.desafioaccandroidkotlin.page.fragment.menu.model
 
+import java.io.Serializable
+
 data class MenuModel (
     val products: List<Products>
 )
@@ -10,7 +12,7 @@ data class Products (
     val size: Int,
     val sugar: Int,
     val additional: List<String>
-) {
+) : Serializable {
     fun getTypeSize(): TypeSize? {
         return TypeSize.getTypeSize(size)
     }

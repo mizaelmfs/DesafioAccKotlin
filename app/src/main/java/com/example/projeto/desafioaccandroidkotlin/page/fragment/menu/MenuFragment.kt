@@ -97,8 +97,9 @@ class MenuFragment : BaseFragment(), CallClickMenu {
     }
 
     override fun onClick(product: Products) {
-        toast(product.title)
-
+        val bundle = Bundle()
+        bundle.putSerializable("product", product)
+        detailsFragment.arguments = bundle
         changeFragment(detailsFragment, PageAnimation.SLIDE_LEFT_TO_RIGHT, R.id.container_fragment, activity!!.supportFragmentManager)
     }
 }
