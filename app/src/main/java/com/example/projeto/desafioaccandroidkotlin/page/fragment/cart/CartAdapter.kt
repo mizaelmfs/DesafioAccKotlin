@@ -34,10 +34,12 @@ class CartAdapter constructor(private val listDetails: List<DetailsModel>) : Rec
         fun setDetails(detailsModel: DetailsModel) {
             binding.details = detailsModel
             var item = ""
-            detailsModel.products!!.additional.forEach {
-                item += "$it "
+            if (!detailsModel.products!!.additional.isNullOrEmpty()) {
+                detailsModel.products!!.additional.forEach {
+                    item += "$it "
+                }
+                binding.addTxt.text = item
             }
-            binding.addTxt.text = item
         }
     }
 }
