@@ -7,11 +7,11 @@ data class MenuModel (
 )
 
 data class Products (
-    val title: String,
-    val image: String,
-    val size: Int,
-    val sugar: Int,
-    val additional: List<String>
+    var title: String,
+    var image: String,
+    var size: Int,
+    var sugar: Int,
+    var additional: List<String>?
 ) : Serializable {
     fun getTypeSize(): TypeSize? {
         return TypeSize.getTypeSize(size)

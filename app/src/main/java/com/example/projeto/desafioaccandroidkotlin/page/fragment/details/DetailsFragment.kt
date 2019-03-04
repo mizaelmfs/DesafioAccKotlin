@@ -9,8 +9,6 @@ import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-
 import com.example.projeto.desafioaccandroidkotlin.R
 import com.example.projeto.desafioaccandroidkotlin.Utils.PageAnimation
 import com.example.projeto.desafioaccandroidkotlin.databinding.FragmentDetailsBinding
@@ -19,8 +17,6 @@ import com.example.projeto.desafioaccandroidkotlin.page.BaseFragment
 import com.example.projeto.desafioaccandroidkotlin.page.fragment.details.model.DetailsViewModel
 import com.example.projeto.desafioaccandroidkotlin.page.fragment.menu.MenuFragment
 import com.example.projeto.desafioaccandroidkotlin.page.fragment.menu.model.Products
-import com.example.projeto.desafioaccandroidkotlin.page.fragment.menu.model.TypeSize
-import com.example.projeto.desafioaccandroidkotlin.page.fragment.menu.model.TypeSugar
 import org.jetbrains.anko.support.v4.toast
 
 class DetailsFragment : BaseFragment() {
@@ -44,7 +40,6 @@ class DetailsFragment : BaseFragment() {
 
         mViewModel.setProduct(product)
 
-        setSize(product)
         inflaterItem(product)
         subscriberObservable()
 
@@ -60,43 +55,11 @@ class DetailsFragment : BaseFragment() {
         }
     }
 
-    private fun setSize(product: Products) {
-        when(product.getTypeSize()){
-            TypeSize.LOW -> {
-                mBinding.lowSizeIv.visibility = View.VISIBLE
-                mBinding.quantityTxt.text = "${200} ML"
-            }
-            TypeSize.MEDIUM -> {
-                mBinding.sizeMediumIv.visibility = View.VISIBLE
-                mBinding.quantityTxt.text = "${300} ML"
-            }
-            TypeSize.LARGE -> {
-                mBinding.sizeHighIv.visibility = View.VISIBLE
-                mBinding.quantityTxt.text = "${400} ML"
-            }
-        }
-
-        when(product.getTypeSugar()) {
-            TypeSugar.NO_SUGAR -> {
-                mBinding.sugarNoIv.visibility = View.VISIBLE
-            }
-            TypeSugar.SUGAR_LOW -> {
-                mBinding.sugarLowIv.visibility = View.VISIBLE
-            }
-            TypeSugar.SUGAR_MEDIUM -> {
-                mBinding.sugarMediumIv.visibility = View.VISIBLE
-            }
-            TypeSugar.SUGAR_LARGE -> {
-                mBinding.sugarHighIv.visibility = View.VISIBLE
-            }
-        }
-    }
-
     private fun inflaterItem(product: Products) {
         if (!product.additional.isNullOrEmpty()) {
             val inflater = LayoutInflater.from(mBinding.addContainer.context)
             var inflaterImageBinding: ItemAddContainerBinding
-            product.additional.forEach {
+            product.additional!!.forEach {
                 inflaterImageBinding = DataBindingUtil.inflate(
                     inflater, R.layout.item_add_container,
                     mBinding.addContainer, false

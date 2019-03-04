@@ -1,5 +1,6 @@
 package com.example.projeto.desafioaccandroidkotlin.manager
 
+import com.example.projeto.desafioaccandroidkotlin.Utils.ErrorProductEmpty
 import com.example.projeto.desafioaccandroidkotlin.page.fragment.details.model.DetailsModel
 
 class DaoManager private constructor() {
@@ -11,11 +12,14 @@ class DaoManager private constructor() {
     }
 
     fun add (detailsModel: DetailsModel): Boolean {
-        return listDao.add(detailsModel)
+        if (detailsModel.count > 0) {
+            return listDao.add(detailsModel)
+        }
+        throw ErrorProductEmpty()
     }
 
     fun update (detailsModel: DetailsModel): Boolean {
-         listDao.remove(detailsModel)
+        listDao.remove(detailsModel)
         return this.add(detailsModel)
     }
 

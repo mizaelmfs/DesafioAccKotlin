@@ -15,7 +15,6 @@ class CartViewModel(application: Application) : AndroidViewModel(application) {
         } else {
             emptyList.set(true)
         }
-
     }
 
 }

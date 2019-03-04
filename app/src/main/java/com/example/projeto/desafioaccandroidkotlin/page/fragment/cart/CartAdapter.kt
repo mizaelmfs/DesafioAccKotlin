@@ -35,7 +35,7 @@ class CartAdapter constructor(private val listDetails: List<DetailsModel>) : Rec
             binding.details = detailsModel
             var item = ""
             if (!detailsModel.products!!.additional.isNullOrEmpty()) {
-                detailsModel.products!!.additional.forEach {
+                detailsModel.products!!.additional!!.forEach {
                     item += "$it "
                 }
                 binding.addTxt.text = item
