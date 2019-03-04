@@ -14,5 +14,8 @@
     <string name="size">Tamanho</string>
     <string name="sugar">Açucar</string>
     <string name="error_empty">Você precisa de ao menos um produto</string>
+    <string name="product_cart">Produto:</string>
+    <string name="quantity_cart">Quantidade:</string>
+    <string name="add_cart">Adicionais:</string>
 
 </resources>

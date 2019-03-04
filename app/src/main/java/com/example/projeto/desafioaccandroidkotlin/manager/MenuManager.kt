@@ -5,7 +5,6 @@ import com.example.projeto.desafioaccandroidkotlin.service.MenuService
 
 class MenuManager private constructor() {
 
-    private var instance: MenuManager? = null
     private var menuService: MenuService = MenuService.instance
 
     companion object {

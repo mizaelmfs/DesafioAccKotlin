@@ -11,8 +11,8 @@ interface EndPoint {
     @GET("products.json")
     fun getMenu(): Call<MenuModel>
 
-    object RetrofitConfig  {
-        var retrofit = Retrofit.Builder()
+    object RetrofitConfig {
+        var retrofit: Retrofit = Retrofit.Builder()
             .baseUrl("https://desafio-mobility.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()

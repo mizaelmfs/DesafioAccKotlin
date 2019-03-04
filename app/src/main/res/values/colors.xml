@@ -8,4 +8,5 @@
     <color name="foreground_text">#bb9493</color>
     <color name="title_color_text">#6d5852</color>
     <color name="color_view">#E4D3D2</color>
+    <color name="background_item_card">#DDDCD8</color>
 </resources>

@@ -2,6 +2,15 @@
 <layout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="java.lang.Integer"/>
+        <variable
+                name="viewmodel"
+                type="com.example.projeto.desafioaccandroidkotlin.page.fragment.cart.model.CartViewModel"/>
+    </data>
+
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -10,6 +19,32 @@
 
         <include android:id="@+id/toolbar"
                  layout="@layout/toolbar" />
+
+        <RelativeLayout
+                android:id="@+id/not_cart_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="@{viewmodel.emptyList ? View.VISIBLE : View.GONE, default=gone}">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/not_cart"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="@color/foreground_text"/>
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/cart_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        android:visibility="@{viewmodel.emptyList ? View.GONE : View.VISIBLE, default=gone}"/>
 
     </LinearLayout>
 </layout>

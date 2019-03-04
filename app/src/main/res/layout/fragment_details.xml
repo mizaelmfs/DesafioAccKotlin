@@ -53,7 +53,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         android:layout_marginEnd="8dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:layout_marginStart="8dp"/>
+                        android:layout_marginStart="8dp" android:layout_marginTop="8dp"/>
                 <TextView
                         android:text="@{viewmodel.getProductsModel.title}"
                         android:layout_width="wrap_content"
@@ -267,6 +267,7 @@
                         android:layout_width="0dp"
                         android:onClick="@{viewmodel.addList}"
                         android:layout_height="wrap_content"
+                        android:textAllCaps="false"
                         android:background="@drawable/shape_btn"
                         android:textColor="@color/color_view"
                         android:id="@+id/add_cart_btn" android:layout_marginBottom="24dp"
