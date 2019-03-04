@@ -17,6 +17,7 @@ import com.example.projeto.desafioaccandroidkotlin.R
 import com.example.projeto.desafioaccandroidkotlin.Utils.NetworkChange
 import com.example.projeto.desafioaccandroidkotlin.Utils.PageAnimation
 import com.example.projeto.desafioaccandroidkotlin.databinding.FragmentMenuBinding
+import com.example.projeto.desafioaccandroidkotlin.manager.DaoManager
 import com.example.projeto.desafioaccandroidkotlin.page.BaseFragment
 import com.example.projeto.desafioaccandroidkotlin.page.fragment.cart.CartFragment
 import com.example.projeto.desafioaccandroidkotlin.page.fragment.details.DetailsFragment

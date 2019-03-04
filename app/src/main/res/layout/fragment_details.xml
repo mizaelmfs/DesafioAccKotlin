@@ -5,6 +5,7 @@
 
     <data>
         <import type="android.view.View"/>
+        <import type="java.lang.Integer"/>
         <variable
                 name="viewmodel"
                 type="com.example.projeto.desafioaccandroidkotlin.page.fragment.details.model.DetailsViewModel"/>
@@ -253,6 +254,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/count_txt"
                         android:textSize="18sp"
+                        android:text="@{Integer.toString(viewmodel.count)}"
                         android:textColor="@color/title_color_text"
                         android:layout_marginTop="24dp"
                         app:layout_constraintTop_toBottomOf="@+id/view5" android:layout_marginBottom="8dp"
@@ -263,6 +265,7 @@
                 <Button
                         android:text="@string/add_to_cart"
                         android:layout_width="0dp"
+                        android:onClick="@{viewmodel.addList}"
                         android:layout_height="wrap_content"
                         android:background="@drawable/shape_btn"
                         android:textColor="@color/color_view"

@@ -13,5 +13,6 @@
     <string name="add_to_cart">Colocar no carrinho</string>
     <string name="size">Tamanho</string>
     <string name="sugar">Açucar</string>
+    <string name="error_empty">Você precisa de ao menos um produto</string>
 
 </resources>

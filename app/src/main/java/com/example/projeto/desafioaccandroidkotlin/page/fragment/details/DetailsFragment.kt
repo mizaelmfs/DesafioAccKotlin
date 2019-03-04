@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 
 import com.example.projeto.desafioaccandroidkotlin.R
 import com.example.projeto.desafioaccandroidkotlin.Utils.PageAnimation
@@ -20,6 +21,7 @@ import com.example.projeto.desafioaccandroidkotlin.page.fragment.menu.MenuFragme
 import com.example.projeto.desafioaccandroidkotlin.page.fragment.menu.model.Products
 import com.example.projeto.desafioaccandroidkotlin.page.fragment.menu.model.TypeSize
 import com.example.projeto.desafioaccandroidkotlin.page.fragment.menu.model.TypeSugar
+import org.jetbrains.anko.support.v4.toast
 
 class DetailsFragment : BaseFragment() {
 
@@ -44,7 +46,7 @@ class DetailsFragment : BaseFragment() {
 
         setSize(product)
         inflaterItem(product)
-        configObservables()
+        subscriberObservable()
 
         return mBinding.root
     }
@@ -56,12 +58,6 @@ class DetailsFragment : BaseFragment() {
         mBinding.toolbar!!.backIv.setOnClickListener {
             changeFragment(menuFragment, PageAnimation.SLIDE_RIGHT_TO_LEFT, R.id.container_fragment, activity!!.supportFragmentManager)
         }
-    }
-
-    private fun configObservables() {
-        mViewModel.getCount().observe(this, Observer {
-            mBinding.countTxt.text  = "$it"
-        })
     }
 
     private fun setSize(product: Products) {
@@ -117,6 +113,12 @@ class DetailsFragment : BaseFragment() {
                 mBinding.addContainer.addView(inflaterImageBinding.addItemIv)
             }
         }
+    }
+
+    private  fun subscriberObservable() {
+        this.mViewModel.getErrorEmpty().observe(this, Observer {
+            toast(getString(R.string.error_empty))
+        })
     }
 
 }
