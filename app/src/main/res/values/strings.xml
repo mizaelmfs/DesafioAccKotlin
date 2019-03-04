@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DesafioAccAndroidKotlin</string>
+    <string name="app_name">CoffeeTEK</string>
     <string name="title_dialog_internet_error">Houve um error ao tentar \nconectar-se com a Internet</string>
     <string name="body_dialog_internet_error_retry">Tente novamente</string>
     <string name="finish">Sair</string>
