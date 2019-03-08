@@ -17,5 +17,6 @@
     <string name="product_cart">Produto:</string>
     <string name="quantity_cart">Quantidade:</string>
     <string name="add_cart">Adicionais:</string>
+    <string name="add_success">Adicionais:</string>
 
 </resources>

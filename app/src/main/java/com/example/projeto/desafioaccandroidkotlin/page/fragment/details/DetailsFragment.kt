@@ -82,6 +82,10 @@ class DetailsFragment : BaseFragment() {
         this.mViewModel.getErrorEmpty().observe(this, Observer {
             toast(getString(R.string.error_empty))
         })
+
+        this.mViewModel.getAddSucess().observe(this, Observer {
+            toast(getString(R.string.add_success))
+        })
     }
 
 }

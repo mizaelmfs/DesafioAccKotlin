@@ -17,6 +17,7 @@ class DetailsViewModel(application: Application) : AndroidViewModel(application)
 
     private val detailsModelLiveData = MutableLiveData<Products>()
     private val errorEmpty = SingleLiveEvent<Void>()
+    private val addSuccess = SingleLiveEvent<Void>()
 
     var count = ObservableInt(0)
     var quantityField = ObservableField<String>()
@@ -55,12 +56,17 @@ class DetailsViewModel(application: Application) : AndroidViewModel(application)
     fun getErrorEmpty() : SingleLiveEvent<Void> {
         return this.errorEmpty
     }
+
+    fun getAddSucess() : SingleLiveEvent<Void> {
+        return this.addSuccess
+    }
     
     fun addList() {
         val detailsModel = DetailsModel(detailsModelLiveData.value, count.get())
         try {
             if (!DaoManager.instance.add(detailsModel)) {
                 DaoManager.instance.update(detailsModel)
+                addSuccess.call()
             }
         } catch (error : ErrorProductEmpty){
             this.errorEmpty.call()
