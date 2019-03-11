@@ -26,6 +26,7 @@ android {
     dataBinding {
         enabled = true
     }
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
 }
 
 dependencies {
@@ -49,5 +50,6 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation 'com.airbnb.android:lottie:2.5.1'
     kapt "android.arch.lifecycle:compiler:1.1.1"
 }
