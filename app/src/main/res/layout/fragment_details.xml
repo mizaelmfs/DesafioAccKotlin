@@ -111,8 +111,9 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         android:background="@color/color_view"
-                        android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/add_cart_btn"
-                        android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/view5"/>
+                        android:layout_marginBottom="32dp" app:layout_constraintBottom_toTopOf="@+id/add_cart_btn"
+                        android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                        app:layout_constraintVertical_bias="0.0"/>
                 <TextView
                         android:text="@string/size"
                         android:layout_width="wrap_content"
@@ -229,42 +230,41 @@
                         app:layout_constraintTop_toBottomOf="@+id/view5" app:layout_constraintStart_toStartOf="parent"
                         android:layout_marginStart="32dp" app:layout_constraintEnd_toEndOf="parent"
                         android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="0.0"
-                        android:layout_marginTop="24dp" android:layout_marginBottom="8dp"
+                        android:layout_marginTop="32dp"
                         app:layout_constraintBottom_toTopOf="@+id/view6" app:layout_constraintVertical_bias="0.0"/>
-                <ImageView
-                        android:layout_width="wrap_content"
-                        android:onClick="@{() -> viewmodel.onCLickMinus()}"
-                        android:layout_height="0dp" app:srcCompat="@drawable/less"
-                        android:id="@+id/menos_iv" app:layout_constraintStart_toEndOf="@+id/textView4"
-                        android:layout_marginStart="8dp" app:layout_constraintTop_toBottomOf="@+id/view5"
-                        android:layout_marginTop="32dp" app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="0.67"
-                        android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/view6"
-                        app:layout_constraintVertical_bias="0.13"/>
-                <ImageView
-                        android:layout_width="wrap_content"
-                        android:onClick="@{() -> viewmodel.onCLickPlus()}"
-                        android:layout_height="0dp" app:srcCompat="@drawable/plus"
-                        android:id="@+id/plus_iv" app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginEnd="32dp"
-                        app:layout_constraintTop_toBottomOf="@+id/view5"
-                        android:layout_marginTop="24dp" app:layout_constraintStart_toStartOf="parent"
-                        android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="1.0"
-                        android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/view6"
-                        app:layout_constraintVertical_bias="0.32"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/count_txt"
-                        android:textSize="18sp"
-                        android:text="@{Integer.toString(viewmodel.count)}"
-                        android:textColor="@color/title_color_text"
-                        android:layout_marginTop="24dp"
-                        app:layout_constraintTop_toBottomOf="@+id/view5" android:layout_marginBottom="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/view6"
-                        app:layout_constraintVertical_bias="0.19"
-                        android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/plus_iv"
-                        app:layout_constraintStart_toEndOf="@+id/menos_iv" android:layout_marginStart="8dp"/>
+
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                        android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/view5"
+                        app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                        app:layout_constraintHorizontal_bias="0.9" android:id="@+id/linearLayout">
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:onClick="@{() -> viewmodel.onCLickMinus()}"
+                            android:layout_height="match_parent" app:srcCompat="@drawable/less"
+                            android:id="@+id/menos_iv"
+                            android:layout_marginStart="8dp"
+
+                            android:layout_marginEnd="8dp"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/count_txt"
+                            android:textSize="18sp"
+                            android:text="@{Integer.toString(viewmodel.count)}"
+                            android:textColor="@color/title_color_text"
+                            android:layout_marginEnd="8dp"/>
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:onClick="@{() -> viewmodel.onCLickPlus()}"
+                            android:layout_height="wrap_content" app:srcCompat="@drawable/plus"
+                            android:id="@+id/plus_iv"/>
+                </LinearLayout>
+
+
                 <Button
                         android:text="@string/add_to_cart"
                         android:layout_width="0dp"
