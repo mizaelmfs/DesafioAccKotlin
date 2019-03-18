@@ -3,7 +3,7 @@
 
 - [x] kotlin
 - [x] MVVM
-- [x] Verificar-se tem conexão com internnet
+- [x] Verificar-se tem conexão com internet
 - [x] Junit
 
 Site do desafio https://gitlab.com/AMobilityRec/desafio/tree/master
